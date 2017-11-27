@@ -7,14 +7,22 @@
 //
 
 import UIKit
+import UIKit
+import MediaPlayer
+import AVKit
 
-class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+class ViewController: AVPlayerViewController {
 
+ 
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            let url = NSURL(string: "http://jplayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v")
+            self.player = AVPlayer(url: (url as! URL)) //player
+            self.player?.play()
+        } // viewDidLoad
+        
+        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
